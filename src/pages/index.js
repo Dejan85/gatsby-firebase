@@ -37,7 +37,7 @@ const IndexPage = props => {
             title,
             id,
             summary,
-            imageUrl,
+            localImage,
             author: { name },
           },
         } = book;
@@ -48,7 +48,7 @@ const IndexPage = props => {
             bookTitle={title}
             bookSummary={summary}
             authorName={name}
-            bookCover={imageUrl}
+            bookCover={localImage && localImage.publicURL}
           >
             <h2>{title}</h2> - <small>{name}</small>
             <div>{summary}</div>
@@ -70,7 +70,9 @@ export const query = graphql`
           id
           title
           summary
-          imageUrl
+          localImage {
+            publicURL
+          }
           author {
             name
           }

@@ -7,7 +7,7 @@ const BookTemplate = props => {
     pageContext: {
       title,
       summary,
-      imageUrl,
+      localImage,
       author: { name },
     },
   } = props;
@@ -18,7 +18,7 @@ const BookTemplate = props => {
         bookTitle={title}
         bookSummary={summary}
         authorName={name}
-        bookCover={imageUrl}
+        bookCover={localImage && localImage.imageUrl}
       />
     </Layout>
   );

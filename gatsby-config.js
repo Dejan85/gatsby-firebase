@@ -60,5 +60,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "Book",
+        imagePath: "imageUrl",
+      },
+    },
   ],
 };
