@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import { FirebaseContext } from "../components/Firebase";
-import { useAuth } from "../components/Firebase";
-import { Form } from "../components/common/Form";
-import { Input } from "../components/common/Input";
-import { Button } from "../components/common/Button";
+// import { useAuth } from "../components/Firebase";
+import { Form, Input, Button } from "../components/common";
 
 // import { Link } from "gatsby";
 
