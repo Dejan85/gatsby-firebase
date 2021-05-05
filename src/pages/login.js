@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
 import { FirebaseContext } from "../components/Firebase";
 import { useAuth } from "../components/Firebase";
+import { Form } from "../components/common/Form";
+import { Input } from "../components/common/Input";
+import { Button } from "../components/common/Button";
 
 // import { Link } from "gatsby";
 
@@ -24,23 +27,25 @@ const Login = () => {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           onChange={handleInputChange}
           placeholder="email"
           type="email"
           name="email"
           value={formValues.email}
         />
-        <input
+        <Input
           onChange={handleInputChange}
           placeholder="password"
           type="password"
           value={formValues.password}
           name="password"
         />
-        <button type="submit">Login</button>
-      </form>
+        <Button type="submit" block>
+          Login
+        </Button>
+      </Form>
     </section>
   );
 };
