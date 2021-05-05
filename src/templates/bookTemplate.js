@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import BookItem from "../components/BookItem";
 import { graphql } from "gatsby";
 import { BookComments } from "../components/common";
+import { FirebaseContext } from "../components/Firebase";
 
 const BookTemplate = props => {
   const {
@@ -10,10 +11,13 @@ const BookTemplate = props => {
         title,
         summary,
         localImage,
+        id,
         author: { name },
       },
     },
   } = props;
+
+  const { firebase } = useContext(FirebaseContext);
 
   return (
     <section>
@@ -23,7 +27,7 @@ const BookTemplate = props => {
         authorName={name}
         bookCover={localImage.childImageSharp}
       />
-      <BookComments />
+      {!!firebase && <BookComments firebase={firebase} bookId={id} />}
     </section>
   );
 };
