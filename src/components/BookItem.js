@@ -17,9 +17,13 @@ const BookItemWrapper = styled.section`
 `;
 
 const BookItemContent = props => {
-  const { bookTitle, bookSummary, authorName, children } = props;
+  const { bookTitle, bookSummary, authorName, bookCover, children } = props;
+
+  console.log("test", bookCover);
+
   return (
     <BookItemWrapper>
+      <img src={bookCover} alt="img" />
       <h2>
         {bookTitle} - <small>{authorName}</small>
       </h2>

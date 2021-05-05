@@ -7,17 +7,19 @@ const BookTemplate = props => {
     pageContext: {
       title,
       summary,
+      imageUrl,
       author: { name },
     },
   } = props;
 
   return (
     <Layout>
-      <BookItem bookTitle={title} bookSummary={summary} authorName={name} />
-      {/* <h2>
-          {title} - <small>{name}</small>
-        </h2>
-        <p>{summary}</p> */}
+      <BookItem
+        bookTitle={title}
+        bookSummary={summary}
+        authorName={name}
+        bookCover={imageUrl}
+      />
     </Layout>
   );
 };
