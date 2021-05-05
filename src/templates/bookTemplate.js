@@ -16,14 +16,14 @@ const BookTemplate = props => {
   } = props;
 
   return (
-    <Layout>
+    <section>
       <BookItem
         bookTitle={title}
         bookSummary={summary}
         authorName={name}
         bookCover={localImage.childImageSharp}
       />
-    </Layout>
+    </section>
   );
 };
 

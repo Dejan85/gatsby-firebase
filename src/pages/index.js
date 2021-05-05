@@ -30,7 +30,7 @@ const IndexPage = props => {
   } = props;
 
   return (
-    <Layout>
+    <section>
       {edges.map(book => {
         const {
           node: {
@@ -58,7 +58,7 @@ const IndexPage = props => {
           </BookItem>
         );
       })}
-    </Layout>
+    </section>
   );
 };
 
