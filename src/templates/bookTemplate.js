@@ -18,7 +18,7 @@ const BookTemplate = props => {
         bookTitle={title}
         bookSummary={summary}
         authorName={name}
-        bookCover={localImage && localImage.imageUrl}
+        bookCover={localImage.childImageSharp}
       />
     </Layout>
   );

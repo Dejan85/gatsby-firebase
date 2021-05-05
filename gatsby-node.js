@@ -16,7 +16,9 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             summary
             localImage {
-              publicURL
+              childImageSharp {
+                gatsbyImageData(layout: FIXED, width: 200, placeholder: BLURRED)
+              }
             }
             author {
               name

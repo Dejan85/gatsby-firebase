@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const BookItemWrapper = styled.section`
   display: flex;
@@ -31,11 +32,12 @@ const BookItemContentWrapper = styled.div`
 
 const BookItem = props => {
   const { bookTitle, bookSummary, authorName, bookCover, children } = props;
+  const pathToImage = getImage(bookCover);
 
   return (
     <BookItemWrapper>
       <BookItemImageWrapper>
-        <img src={bookCover} alt="img" />
+        <GatsbyImage image={pathToImage} alt="img" />
       </BookItemImageWrapper>
       <BookItemContentWrapper>
         <h2>

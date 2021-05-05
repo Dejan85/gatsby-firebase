@@ -48,7 +48,7 @@ const IndexPage = props => {
             bookTitle={title}
             bookSummary={summary}
             authorName={name}
-            bookCover={localImage && localImage.publicURL}
+            bookCover={localImage.childImageSharp}
           >
             <h2>{title}</h2> - <small>{name}</small>
             <div>{summary}</div>
@@ -71,7 +71,9 @@ export const query = graphql`
           title
           summary
           localImage {
-            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: FIXED, width: 200, placeholder: BLURRED)
+            }
           }
           author {
             name
