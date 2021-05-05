@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import BookItem from "../components/BookItem";
+import BookItemContent from "../components/BookItemContent";
 
 const BookTemplate = props => {
   const {
@@ -14,7 +14,7 @@ const BookTemplate = props => {
 
   return (
     <Layout>
-      <BookItem
+      <BookItemContent
         bookTitle={title}
         bookSummary={summary}
         authorName={name}
