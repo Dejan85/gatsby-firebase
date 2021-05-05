@@ -1,7 +1,7 @@
 import React from "react";
-// import Layout from "../components/layout";
 import BookItem from "../components/BookItem";
 import { graphql } from "gatsby";
+import { BookComments } from "../components/common";
 
 const BookTemplate = props => {
   const {
@@ -23,6 +23,7 @@ const BookTemplate = props => {
         authorName={name}
         bookCover={localImage.childImageSharp}
       />
+      <BookComments />
     </section>
   );
 };

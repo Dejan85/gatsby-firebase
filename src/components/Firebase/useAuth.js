@@ -17,10 +17,16 @@ function useAuth() {
 
       unsubscribe = firebaseInstance.auth.onAuthStateChanged(userResult => {
         if (userResult) {
-          firebaseInstance.getUserProfile({
-            userId: userResult.uid,
-          });
-          setUser(userResult);
+          firebaseInstance
+            .getUserProfile({
+              userId: userResult.uid,
+            })
+            .then(r => {
+              setUser({
+                ...userResult,
+                username: r.empty ? null : r.docs[0].id,
+              });
+            });
         } else {
           setUser(null);
         }

@@ -6,6 +6,7 @@ const Register = () => {
   const { firebase } = useContext(FirebaseContext);
   const [formValues, setFormValues] = useState({
     email: "",
+    username: "",
     password: "",
     confirmPassword: "",
   });
@@ -17,6 +18,7 @@ const Register = () => {
     if (formValues.password === formValues.confirmPassword) {
       firebase
         .register({
+          username: formValues.username,
           email: formValues.email,
           password: formValues.password,
         })
@@ -38,6 +40,13 @@ const Register = () => {
 
   return (
     <Form onSubmit={onSubmit}>
+      <Input
+        onChange={onChange}
+        placeholder="username"
+        type="text"
+        name="username"
+        value={formValues.username}
+      />
       <Input
         onChange={onChange}
         placeholder="email"
