@@ -13,16 +13,6 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
-            title
-            summary
-            localImage {
-              childImageSharp {
-                gatsbyImageData(layout: FIXED, width: 200, placeholder: BLURRED)
-              }
-            }
-            author {
-              name
-            }
           }
         }
       }
@@ -33,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/book/${book.node.id}`,
       component: bookTemplate,
-      context: book.node,
+      context: { bookId: book.node.id },
     });
   });
 };
