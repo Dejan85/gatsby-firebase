@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
-import BookItemContent from "../components/BookItemContent";
+import BookItem from "../components/BookItem";
 // import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout";
 // import Seo from "../components/seo"
@@ -43,7 +43,7 @@ const IndexPage = props => {
         } = book;
 
         return (
-          <BookItemContent
+          <BookItem
             key={id}
             bookTitle={title}
             bookSummary={summary}
@@ -55,7 +55,7 @@ const IndexPage = props => {
             <LinkButton>
               <Link to={`/book/${id}`}>Join coversation</Link>
             </LinkButton>
-          </BookItemContent>
+          </BookItem>
         );
       })}
     </Layout>
